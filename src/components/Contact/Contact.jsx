@@ -1,64 +1,78 @@
 import React, { useContext, useRef, useState } from "react";
 import "./Contact.css";
-import emailjs from "@emailjs/browser";
-import { themeContext } from "../../Context";
+import MusicApp from '../../img/products/Code typing-bro.png';
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 const Contact = () => {
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
   const form = useRef();
-  const [done, setDone] = useState(false)
-  const sendEmail = (e) => {
+  const [done, setDone] = useState(false);
+
+  const sendEmail = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_2mu5xtl",
-        "template_m5udu2c",
-        form.current,
-        "VLwg1ltOWvnCYAiK_"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          setDone(true);
-          form.reset();
+    try {
+      const response = await fetch("http://localhost:3001/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+        body: JSON.stringify({
+          user_name: form.current.user_name.value,
+          user_email: form.current.user_email.value,
+          message: form.current.message.value,
+        }),
+      });
+
+      if (response.ok) {
+        setDone(true);
+        form.current.reset();
+      } else {
+        console.error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error sending email", error);
+    }
   };
 
   return (
-    <div className="contact-form" id="contact">
-      {/* left side copy and paste from work section */}
-      <div className="w-left">
-        <div className="awesome">
-          {/* darkMode */}
-          <span style={{color: darkMode?'white': ''}}>Get in Touch</span>
-          <span>Contact me</span>
-          <div
-            className="blur s-blur1"
-            style={{ background: "#ABF1FF94" }}
-          ></div>
+    
+   
+      <div className="contact-container">
+        <div className="contact-form" id="contact">
+          <form ref={form} onSubmit={sendEmail}>
+            <div className="form-partition">
+              <div className="form-group">
+                <label htmlFor="user_name">Name:</label>
+                <input type="text" name="user_name" id="user_name" className="user" placeholder="Your Name" required />
+              </div>
+              <div className="form-group">
+                <label htmlFor="user_email">Email:</label>
+                <input type="email" name="user_email" id="user_email" className="user" placeholder="Your Email" required />
+              </div>
+             
+              <div className="form-group">
+                <label htmlFor="message">Message:</label>
+                <textarea name="message" id="message" className="user" placeholder="Your Message" required />
+              </div>
+              <div className="form-group">
+                {/* Add reCAPTCHA here */}
+                <div className="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
+              </div>
+              <div className="form-group">
+                <input type="submit" value="Send" className="button" />
+              </div>
+              <span>{done && "Thanks for Contacting Us"}</span>
+            </div>
+          </form>
         </div>
       </div>
-      {/* right side form */}
-      <div className="c-right">
-        <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="user_name" className="user"  placeholder="Name"/>
-          <input type="email" name="user_email" className="user" placeholder="Email"/>
-          <textarea name="message" className="user" placeholder="Message"/>
-          <input type="submit" value="Send" className="button"/>
-          <span>{done && "Thanks for Contacting me"}</span>
-          <div
-            className="blur c-blur1"
-            style={{ background: "var(--purple)" }}
-          ></div>
-        </form>
-      </div>
-    </div>
-  );
-};
+    );
+  };
+  
+  
+  
 
 export default Contact;

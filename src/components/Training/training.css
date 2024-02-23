@@ -1,0 +1,95 @@
+.headtraining {
+  color: var(--orange);
+  font-size: 30px;
+  font-weight: 400;
+  text-align: center;
+  padding: 20px; /* Add padding for better spacing on smaller screens */
+}
+
+.subheadtrain {
+  color: var(--black);
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px; /* Add padding for better spacing on smaller screens */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem;
+}
+
+.card {
+  background: #fff;
+  width: calc(100% - 20px); 
+  max-width: 15rem;
+  border-radius: 0.6em;
+  margin: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+  transition: all ease 200ms;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card h2 {
+  color: #222;
+  margin-top: -0.2em;
+  line-height: 1.4;
+  font-size: 1.3em;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  transition: all ease-in 100ms;
+  text-align: center;
+}
+
+.card p {
+  color: #777;
+  text-align: center;
+}
+
+.card h5 {
+  color: #bbb;
+  font-weight: 700;
+  font-size: 0.7em;
+  letter-spacing: 0.04em;
+  margin: 1.4em 0 0 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-body {
+  padding: 1.2em;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.card {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .card {
+    max-width: calc(100% - 20px);
+  }
+}

@@ -1,39 +1,80 @@
-import React, { useContext } from "react";
-import "./Portfolio.css";
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css";
-import Sidebar from "../../img/sidebar.png";
-import Ecommerce from "../../img/ecommerce.png";
-import HOC from "../../img/hoc.png";
-import MusicApp from "../../img/musicapp.png";
-import { themeContext } from "../../Context";
+import  React,{useContext} from 'react';
+import { Link, useNavigate } from 'react-router-dom'; 
+
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import './Portfolio.css';
+import Ecommerce from '../../img/1.jpg.jpeg';
+import HOC from '../../img/2.jpg.jpeg';
+import MusicApp from '../../img/3.jpg.jpeg';
+import full1 from '../../img/4.jpg.jpeg';
+import { themeContext } from '../../Context';
+
+
+SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+
 const Portfolio = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    
+      console.log('Button clicked');
+    
+    navigate('/Services');
+  };
+
   return (
     <div className="portfolio" id="portfolio">
-      {/* heading */}
-      <span style={{color: darkMode?'white': ''}}>Recent Projects</span>
-      <span>Portfolio</span>
+      {/* Heading */}
+      <div className="portfolio-heading">
+        <span>Our courses</span>
+      </div>
 
-      {/* slider */}
+      {/* Slider */}
       <Swiper
-        spaceBetween={30}
-        slidesPerView={3}
-        grabCursor={true}
+        spaceBetween={35}
+        slidesPerView={4}
+        navigation
+        scrollbar={{ draggable: true }}
         className="portfolio-slider"
       >
         <SwiperSlide>
-          <img src={Sidebar} alt="" />
+          <div className="portfolio-card">
+            <img src={MusicApp} alt="" />
+            <button className="buttonX" onClick={handleClick}>
+              Explore
+            </button>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={Ecommerce} alt="" />
+          <div className="portfolio-card">
+            <img src={Ecommerce} alt="" />
+            <button className="buttonX" onClick={handleClick}>
+              Explore
+            </button>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={MusicApp} alt="" />
+          <div className="portfolio-card">
+            <img src={full1} alt="" />
+            <button className="buttonX" onClick={handleClick}>
+              Explore
+            </button>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img src={HOC} alt="" />
+          <div className="portfolio-card">
+            <img src={HOC} alt="" />
+            <button className="buttonX" onClick={handleClick}>
+              Explore
+            </button>
+          </div>
         </SwiperSlide>
       </Swiper>
     </div>

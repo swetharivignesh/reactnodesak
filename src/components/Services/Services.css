@@ -1,75 +1,39 @@
-.services {
-  padding: 0 3rem 0 3rem;
+/* Serve.css */
+
+/* Common styles for all screen sizes */
+.serve-container {
   display: flex;
-  height: 30rem;
-  margin-bottom: 8rem;
-  margin-top: 9rem;
-  margin-bottom: 13rem;
-  /* scroll view */
-  padding-top: 3rem;
-}
-/* left side */
-.awesome {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  /* gap: 20px; */
+  flex-wrap: wrap; /* Allow items to wrap to the next line on smaller screens */
+  justify-content: space-around;
+  padding: 20px;
 }
 
-.awesome > :nth-child(1) {
-  color: var(--black);
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.awesome > :nth-child(2) {
-  color: var(--orange);
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.awesome > :nth-child(3) {
-  color: var(--gray);
-  font-size: 14px;
-  margin-top: 1rem;
-}
-.s-button {
-  width: 8rem;
-  height: 2rem;
-  margin-top: 1rem;
-}
-/* right sided */
-.cards {
-  position: relative;
-}
-.cards > * {
-  position: absolute;
+.card {
+  border: 1px solid #b81616;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  width: 300px; /* Set a fixed width for the card on larger screens */
 }
 
-/* blur */
-.s-blur2 {
-  left: 14rem;
-  top: 8rem;
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.s-blur1 {
-  top: 13rem;
-  left: -18rem;
+button:hover {
+  background-color: #0056b3;
 }
 
-@media screen and (max-width: 480px) {
-  .services {
-    margin-top: 0;
-    flex-direction: column;
-    gap: 5rem;
-    height: 66rem;
-    padding: 0;
-  }
-
-  .cards {
-    display: flex;
-    flex-direction: column;
-    gap: 17rem;
-  }
-  .cards > * {
-    position: static;
+/* Adjust styles for smaller screens using media queries */
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Make the card full-width on smaller screens */
   }
 }

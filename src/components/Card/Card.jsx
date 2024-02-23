@@ -1,13 +1,13 @@
-import React from "react";
-import "./Card.css";
+// Card.jsx
 
-const Card = ({emoji, heading, detail, color}) => {
+import React from 'react';
+
+const Card = ({ title, subtitle, buttonText, onClick }) => {
   return (
-    <div className="card" style={{borderColor: {color}}}> 
-      <img src={emoji} alt="" />
-      <span>{heading}</span>
-      <span>{detail}</span>
-      <button className="c-button">LEARN MORE</button>
+    <div className="card">
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+      <button onClick={onClick}>{buttonText}</button>
     </div>
   );
 };

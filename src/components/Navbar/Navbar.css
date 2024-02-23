@@ -16,6 +16,7 @@
 .n-name {
   font-size: 1.3rem;
   font-weight: bold;
+  padding-left: 2rem;
 }
 .n-right {
   flex: 1;
@@ -41,6 +42,9 @@
 
 .n-button {
   flex: 2;
+  padding-right: 2rem;
+  padding-top: 1rem;
+  margin-right: 2rem;
 }
 
 @media screen and (max-width: 480px) {

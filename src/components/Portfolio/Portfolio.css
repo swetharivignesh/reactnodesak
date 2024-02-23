@@ -1,14 +1,20 @@
+/* portfolio */
 .portfolio {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
-
+  height: 110vh;
+  position: relative;
+  margin: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem;
 }
+
 /* heading */
-.portfolio span:nth-of-type(1) {
-  color: var(--black);
+.portfolio span:nth-of-type(1),
+.portfolio-heading {
+  color: var(--orange);
   font-size: 2rem;
   font-weight: bold;
 }
@@ -20,21 +26,77 @@
 }
 
 /* slider */
-.portfolio .swiper{
-    overflow: visible!important;
-}
-
 .portfolio-slider {
   margin-top: 3rem;
   width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 
 .portfolio-slider .swiper-slide {
-  width: 20rem;
-}
-.portfolio img {
-  width: 19rem;
-  filter: drop-shadow(-12px 15px 13px rgba(0, 0, 0, 0.25));
-  border-radius: 19px;
+  width: 100%;
 }
 
+.portfolio img {
+  
+  filter: drop-shadow(-12px 15px 13px rgba(0, 0, 0, 0.25));
+  border-radius: 19px;
+  max-width: 100%; 
+  height: auto;
+  border-radius: 15px;
+}
+
+/* button */
+.buttonX {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 5px;
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttonX:hover {
+  background-color: #2980b9;
+}
+
+/* Add spacing between cards and dots */
+.swiper-pagination {
+  margin-top: 1rem;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+  .portfolio {
+    height: auto;
+  }
+
+  .portfolio span:nth-of-type(1),
+  .portfolio span:nth-of-type(2) {
+    font-size: 2rem;
+  }
+
+  .portfolio-slider {
+    margin-top: 2rem;
+  }
+
+  .portfolio-slider .swiper-slide {
+    width: 100%;
+  }
+
+  .portfolio img {
+    max-width: 12rem;
+    border-radius: 15px;
+  }
+
+  .buttonX {
+    top: 95%;
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}

@@ -1,28 +1,39 @@
-.footer {
-  display: flex;
-  align-items: center;
-  margin: -0.5rem -3.5rem;
-  position: relative;
-  margin-top: -7rem;
-}
-.f-content {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 4rem;
-  gap: 4rem;
-  color: white;
-}
-.f-icons {
-  display: flex;
-  gap: 2rem;
+.text-small {
+  font-size: 0.9rem;
 }
 
-@media screen and (max-width: 480px){
-  .f-content{
-    transform: scale(.5);
-  }
+a {
+  color: #0e0d0d;
+  text-decoration: none;
+  transition: all 0.3s;
 }
+
+a:hover, a:focus {
+  text-decoration: none;
+}
+
+.form-control {
+  background: #e8eaec;
+  border-color: #fcf8f8;
+}
+
+.form-control:focus {
+  background: #212529;
+}
+
+footer {
+  background: #edeff1;
+}
+
+.text-white{
+  color:#141313;
+}
+.small{
+  color:#141313;
+}
+/* ==========================================
+    CUSTOM UTILS CLASSES
+  ========================================== */
+  body, html {
+    height: 100%;
+  }

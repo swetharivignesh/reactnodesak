@@ -21,21 +21,20 @@ const Works = () => {
         <div className="awesome">
           {/* dark Mode */}
           <span style={{ color: darkMode ? "white" : "" }}>
-            Works for All these
+            About us
           </span>
-          <span>Brands & Clients</span>
+          <span>Learner-Friendly Approach</span>
           <spane>
-            Lorem ispum is simpley dummy text of printing of printing Lorem
+             Hello, I'm Swetha Harivignesh, the founder of Sak Academy
             <br />
-            ispum is simpley dummy text of printingLorem ispum is simpley dummy
-            text
+            I realized the importance of a well-rounded approach to technical abilities and a strong mindset
             <br />
-            y dummy text of printingLorem
+            At Sak Academy, we equip people with knowledge and a mindset for triumph in the ever-changing world of today
             <br />
-            ispum is simpley dummy text of printing
+            Come and join us to embark on a rewarding IT journey
           </spane>
           <Link to="contact" smooth={true} spy={true}>
-            <button className="button s-button">Hire Me</button>
+            <button className="button s-button">Learn More</button>
           </Link>
           <div
             className="blur s-blur1"
@@ -54,19 +53,19 @@ const Works = () => {
           className="w-mainCircle"
         >
           <div className="w-secCircle">
-            <img src={Upwork} alt="" />
+            <img src={Upwork} alt="" width="100px" height="100px"/>
           </div>
           <div className="w-secCircle">
-            <img src={Fiverr} alt="" />
+            <img src={Fiverr} alt="" width="100px" height="100px"/>
           </div>
           <div className="w-secCircle">
-            <img src={Amazon} alt="" />
+            <img src={Amazon} alt="" width="100px" height="100px"/>
           </div>{" "}
           <div className="w-secCircle">
-            <img src={Shopify} alt="" />
+            <img src={Shopify} alt="" width="100px" height="100px" />
           </div>
           <div className="w-secCircle">
-            <img src={Facebook} alt="" />
+            <img src={Facebook} alt=""width="100px" height="100px" />
           </div>
         </motion.div>
         {/* background Circles */}

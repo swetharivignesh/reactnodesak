@@ -1,3 +1,4 @@
+
 .floatingDiv {
   justify-content: space-around;
   background: white;
@@ -5,16 +6,22 @@
   border-radius: 17px;
   display: flex;
   align-items: center;
-  padding: 0px 28px 0px 0px;
+  padding: 0px 10px;
   height: 4.5rem;
 }
+
 .floatingDiv > img {
   transform: scale(0.4);
 }
+
 .floatingDiv > span {
   font-family: sans-serif;
   font-size: 16px;
-  /* yahan ye color add kia hy bad mein dark mode k waqt */
   color: black;
 }
 
+@media screen and (max-width: 480px) {
+  .floatingDiv {
+    padding: 0 5px; /* Adjust padding for smaller screens */
+  }
+}
